@@ -17,7 +17,7 @@ window.onload = function() {
     
     function preload() {
         // Load an image and call it 'logo'.
-        game.load.atlasJSONHash('tutorial', 'tutorial.png', 'tutorial.json');
+        game.load.atlasJSONHash('tutorial', 'assets/tutorial.png', 'assets/tutorial.json');
     }
     
 
