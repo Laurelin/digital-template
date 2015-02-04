@@ -27,7 +27,7 @@ window.onload = function() {
 		//background
 		game.add.sprite( 0, 0, 'tutorial', 'musicback');
 		var playbutton = game.add.button(20, 18, 'tutorial', actionOnClick, this, 'playbutton1', 'playpressed');
-		playbutton.onInputOver.add(playpressed, this);
+		playbutton.onInputOver.add('playpressed', this);
 		
 
         // Add some text using a CSS style.
