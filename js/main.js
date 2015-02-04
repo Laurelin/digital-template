@@ -25,7 +25,7 @@ window.onload = function() {
     function create() {
 	
 		//background
-		game.add.sprite( 0, 0, 'tutorial' 'musicback');
+		game.add.sprite( 0, 0, 'tutorial', 'musicback');
 
         // Add some text using a CSS style.
         // Center it in X, and position its top 15 pixels from the top of the world.
