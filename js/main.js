@@ -13,33 +13,20 @@ window.onload = function() {
     
     "use strict";
     
-    var game = new Phaser.Game( 800, 600, Phaser.AUTO, 'game', { preload: preload, create: create, update: update } );
+    var game = new Phaser.Game( 1024, 640, Phaser.AUTO, 'game', { preload: preload, create: create, update: update } );
     
     function preload() {
         // Load an image and call it 'logo'.
-        game.load.image( 'logo', 'assets/phaser.png' );
-		game.load.image( 'bg', 'assets/musicback.jpg' );
+        game.load.atlasJSONHash('tutorial', 'tutorial.png', 'tutorial.json');
     }
     
-    var bouncy;
+
     
     function create() {
 	
 		//background
-		game.add.sprite( 0, 0, 'bg');
-		
-		
-        // Create a sprite at the center of the screen using the 'logo' image.
-        bouncy = game.add.sprite( game.world.centerX, game.world.centerY, 'logo' );
-        // Anchor the sprite at its center, as opposed to its top-left corner.
-        // so it will be truly centered.
-        bouncy.anchor.setTo( 0.5, 0.5 );
-        
-        // Turn on the arcade physics engine for this sprite.
-        game.physics.enable( bouncy, Phaser.Physics.ARCADE );
-        // Make it bounce off of the world bounds.
-        bouncy.body.collideWorldBounds = true;
-        
+		game.add.sprite( 0, 0, 'tutorial' 'musicback');
+
         // Add some text using a CSS style.
         // Center it in X, and position its top 15 pixels from the top of the world.
         var style = { font: "25px Verdana", fill: "#9999ff", align: "center" };
