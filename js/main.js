@@ -26,11 +26,15 @@ window.onload = function() {
 	
 		//background
 		game.add.sprite( 0, 0, 'tutorial', 'musicback.jpg');
+		
+		//buttons!
 		var replayButton = game.add.button(18, 20 , 'tutorial', test, this, 'playbutton2.png', 'playbutton2.png', 'playpressed.png', 'playbutton2.png');
 		var playButton = game.add.button(890, 20 , 'tutorial', test, this, 'playbutton1.png', 'playbutton1.png', 'playpressed1.png', 'playbutton1.png');
 		var checkButton = game.add.button(game.world.centerX, 520 , 'tutorial', test, this, 'check.png', 'check.png', 'checkpressed.png', 'check.png');
 		var pianoButton = game.add.button(890, 180 , 'tutorial', test, this, 'piano.png', 'piano.png', 'piano.png', 'piano.png');
 		var violinButton = game.add.button(890, 300 , 'tutorial', test, this, 'violin.png', 'violin.png', 'violin.png', 'violin.png');
+		
+		//puzzle pieces
 		var m1 = game.add.sprite( 50, 450, 'tutorial', 'T1.png');
 		var m2 = game.add.sprite( 200, 450, 'tutorial', 'T2.png');
 		var m3 = game.add.sprite( 350, 450, 'tutorial', 'T3.png');
@@ -38,13 +42,27 @@ window.onload = function() {
 		var m5 = game.add.sprite( 650, 450, 'tutorial', 'T5.png');
 		var m6 = game.add.sprite( 820, 450, 'tutorial', 'T6.png');
 		
+		//behaviors
+		m1.inputEnabled = true;
+		m2.inputEnabled = true;
+		m3.inputEnabled = true;
+		m4.inputEnabled = true;
+		m5.inputEnabled = true;
+		m6.inputEnabled = true;
+		
+		m1.input.enableDrag();
+		m2.input.enableDrag();
+		m3.input.enableDrag();
+		m4.input.enableDrag();
+		m5.input.enableDrag();
+		m6.input.enableDrag();
 		
 		
 
         // Add some text using a CSS style.
         // Center it in X, and position its top 15 pixels from the top of the world.
         var style = { font: "25px Verdana", fill: "#9999ff", align: "center" };
-        var text = game.add.text( game.world.centerX, 15, "Build something awesome.", style );
+        var text = game.add.text( game.world.centerX, 15, "Music Puzzle", style );
         text.anchor.setTo( 0.5, 0.0 );
     }
     
