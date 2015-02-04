@@ -25,8 +25,8 @@ window.onload = function() {
     function create() {
 	
 		//background
-		game.add.sprite( 0, 0, 'tutorial', 'musicback');
-		var playbutton = game.add.button(game.world.centerX, game.world.centerY , 'tutorial', test, this, 'playbutton2', 'playbutton2', 'playpressed', 'playbutton2');
+		game.add.sprite( 0, 0, 'tutorial', 'musicback.jpg');
+		var playbutton = game.add.button(game.world.centerX, game.world.centerY , 'tutorial', test, this, 'playbutton2.png', 'playbutton2.png', 'playpressed.png', 'playbutton2.png');
 		
 
         // Add some text using a CSS style.
@@ -42,6 +42,6 @@ window.onload = function() {
 	
 	function test()
 	{
-		text.visible =!  text.visible;
+		playbuttonvisible =!  playbutton.visible;
 	}
 };
