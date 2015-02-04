@@ -40,4 +40,9 @@ window.onload = function() {
     function update() {
        
     }
+	
+	function actionOnClick()
+	{
+		text.visible =!  text.visible;
+	}
 };
