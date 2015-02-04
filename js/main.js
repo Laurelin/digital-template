@@ -26,7 +26,12 @@ window.onload = function() {
 	
 		//background
 		game.add.sprite( 0, 0, 'tutorial', 'musicback.jpg');
-		var playbutton = game.add.button(game.world.centerX, game.world.centerY , 'tutorial', test, this, 'playbutton2.png', 'playbutton2.png', 'playpressed.png', 'playbutton2.png');
+		var replayButton = game.add.button(18, 20 , 'tutorial', test, this, 'playbutton2.png', 'playbutton2.png', 'playpressed.png', 'playbutton2.png');
+		var playButton = game.add.button(890, 20 , 'tutorial', test, this, 'playbutton1.png', 'playbutton1.png', 'playpressed1.png', 'playbutton1.png');
+		var checkButton = game.add.button(game.world.centerX, 620 , 'tutorial', test, this, 'check.png', 'check.png', 'checkpressed.png', 'check.png');
+		var pianoButton = game.add.button(890, 180 , 'tutorial', test, this, 'piano.png', 'piano.png', 'piano.png', 'piano.png');
+		var violinButton = game.add.button(890, 300 , 'tutorial', test, this, 'violin.png', 'violin.png', 'violin.png', 'violin.png');
+		
 		
 
         // Add some text using a CSS style.

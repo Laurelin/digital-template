@@ -1,5 +1,21 @@
 {"frames": {
 
+"check.png":
+{
+	"frame": {"x":206,"y":644,"w":99,"h":100},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":0,"w":99,"h":100},
+	"sourceSize": {"w":100,"h":100}
+},
+"checkpressed.png":
+{
+	"frame": {"x":307,"y":644,"w":99,"h":100},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":0,"w":99,"h":100},
+	"sourceSize": {"w":100,"h":100}
+},
 "musicback.jpg":
 {
 	"frame": {"x":2,"y":2,"w":1024,"h":640},
@@ -8,9 +24,25 @@
 	"spriteSourceSize": {"x":0,"y":0,"w":1024,"h":640},
 	"sourceSize": {"w":1024,"h":640}
 },
+"piano.png":
+{
+	"frame": {"x":712,"y":644,"w":95,"h":82},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":2,"y":10,"w":95,"h":82},
+	"sourceSize": {"w":100,"h":100}
+},
+"playbutton1.png":
+{
+	"frame": {"x":2,"y":644,"w":100,"h":100},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":100,"h":100},
+	"sourceSize": {"w":100,"h":100}
+},
 "playbutton2.png":
 {
-	"frame": {"x":1028,"y":2,"w":99,"h":100},
+	"frame": {"x":408,"y":644,"w":99,"h":100},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":0,"y":0,"w":99,"h":100},
@@ -18,19 +50,35 @@
 },
 "playpressed.png":
 {
-	"frame": {"x":1028,"y":104,"w":99,"h":100},
+	"frame": {"x":509,"y":644,"w":99,"h":100},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":0,"y":0,"w":99,"h":100},
 	"sourceSize": {"w":100,"h":100}
+},
+"playpressed1.png":
+{
+	"frame": {"x":104,"y":644,"w":100,"h":100},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":100,"h":100},
+	"sourceSize": {"w":100,"h":100}
+},
+"violin.png":
+{
+	"frame": {"x":610,"y":644,"w":100,"h":99},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":100,"h":99},
+	"sourceSize": {"w":100,"h":99}
 }},
 "meta": {
 	"app": "http://www.codeandweb.com/texturepacker",
 	"version": "1.0",
 	"image": "tutorial.png",
 	"format": "RGBA8888",
-	"size": {"w":1129,"h":644},
+	"size": {"w":1028,"h":746},
 	"scale": "1",
-	"smartupdate": "$TexturePacker:SmartUpdate:c3f5a706c28c414ec12f03361ab101ee:8dc490c871f19df8ae96c7f210dd25cb:79be00c7babd4ee577009a58f6978baa$"
+	"smartupdate": "$TexturePacker:SmartUpdate:2294bfdedc216be4618d30d838282427:c368b54bcc109e594ea7ea9cb25e9b2b:79be00c7babd4ee577009a58f6978baa$"
 }
 }
