@@ -31,12 +31,12 @@ window.onload = function() {
 		var checkButton = game.add.button(game.world.centerX, 520 , 'tutorial', test, this, 'check.png', 'check.png', 'checkpressed.png', 'check.png');
 		var pianoButton = game.add.button(890, 180 , 'tutorial', test, this, 'piano.png', 'piano.png', 'piano.png', 'piano.png');
 		var violinButton = game.add.button(890, 300 , 'tutorial', test, this, 'violin.png', 'violin.png', 'violin.png', 'violin.png');
-		var m1 = game.add.sprite( 18, 500, 'tutorial', 'T1.png');
-		var m2 = game.add.sprite( 168, 500, 'tutorial', 'T2.png');
-		var m3 = game.add.sprite( 318, 500, 'tutorial', 'T3.png');
-		var m4 = game.add.sprite( 468, 500, 'tutorial', 'T4.png');
-		var m5 = game.add.sprite( 518, 500, 'tutorial', 'T5.png');
-		var m6 = game.add.sprite( 668, 500, 'tutorial', 'T6.png');
+		var m1 = game.add.sprite( 50, 480, 'tutorial', 'T1.png');
+		var m2 = game.add.sprite( 200, 480, 'tutorial', 'T2.png');
+		var m3 = game.add.sprite( 350, 480, 'tutorial', 'T3.png');
+		var m4 = game.add.sprite( 500, 480, 'tutorial', 'T4.png');
+		var m5 = game.add.sprite( 650, 480, 'tutorial', 'T5.png');
+		var m6 = game.add.sprite( 800, 480, 'tutorial', 'T6.png');
 		
 		
 		
