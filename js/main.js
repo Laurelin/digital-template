@@ -26,8 +26,7 @@ window.onload = function() {
 	
 		//background
 		game.add.sprite( 0, 0, 'tutorial', 'musicback');
-		var playbutton = game.add.button(20, 18, 'tutorial', actionOnClick, this, 'playbutton1', 'playpressed');
-		playbutton.onInputOver.add('playpressed', this);
+		var playbutton = game.add.button(20, 18, 'tutorial', test, this, 'playbutton2', 'playbutton2', 'playpressed', 'playbutton2');
 		
 
         // Add some text using a CSS style.
@@ -41,7 +40,7 @@ window.onload = function() {
        
     }
 	
-	function actionOnClick()
+	function test()
 	{
 		text.visible =!  text.visible;
 	}
