@@ -26,6 +26,9 @@ window.onload = function() {
 	
 		//background
 		game.add.sprite( 0, 0, 'tutorial', 'musicback');
+		var playbutton = game.add.button(20, 18, 'tutorial', actionOnClick, this, 'playbutton1', 'playpressed');
+		playbutton.onInputOver.add(playpressed, this);
+		
 
         // Add some text using a CSS style.
         // Center it in X, and position its top 15 pixels from the top of the world.
