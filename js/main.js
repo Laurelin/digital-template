@@ -29,7 +29,7 @@ window.onload = function() {
 		game.add.sprite( 0, 0, 'tutorial', 'musicback.jpg');
 		
 		//audio sprite
-		var sound = game.add.audio('sound', this);
+		var sound = game.add.audio('sound');
 		sound.allowMultiple = true;
 		
 		//markers
