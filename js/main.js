@@ -67,6 +67,32 @@ window.onload = function() {
 		sound.addMarker('m3viv', 66, 2.3);
 		
 		sound.addMarker('m4', 69, 2.3);
+		sound.addMarker('m4h', 72, 2.3);
+		sound.addMarker('m4hv', 75, 2.3);
+		sound.addMarker('m4v', 78, 2.3);
+		sound.addMarker('m4vih', 81, 2.3);
+		sound.addMarker('m4vihv', 84, 2.3);
+		sound.addMarker('m4viv', 87, 2.3);
+		
+		sound.addMarker('m5', 90, 2.3);
+		sound.addMarker('m5h', 93, 2.3);
+		sound.addMarker('m5hv', 96, 2.3);
+		sound.addMarker('m5v', 99, 2.3);
+		sound.addMarker('m5vih', 102, 2.3);
+		sound.addMarker('m5vihv', 105, 2.3);
+		sound.addMarker('m5viv', 108, 2.3);
+		
+		sound.addMarker('m6', 111, 2.3);
+		sound.addMarker('m6h', 114, 2.3);
+		sound.addMarker('m6hv', 117, 2.3);
+		sound.addMarker('m6v', 120, 2.3);
+		sound.addMarker('m6vih', 123, 2.3);
+		sound.addMarker('m6vihv', 126, 2.3);
+		sound.addMarker('m6viv', 129, 2.3);
+		
+		sound.addMarker('Tfinalp', 132, 18.5);
+		sound.addMarker('Tfinalp', 151, 18.5);
+		
 		
 		//buttons!
 		replayButton = game.add.button( 18, 20 , 'tutorial', test, this, 'playbutton2.png', 'playbutton2.png', 'playpressed.png', 'playbutton2.png');
@@ -82,6 +108,7 @@ window.onload = function() {
 		for(var i = 0; i < 6; i++)
 		{
 			measure = game.add.sprite( 50 + 150*i, 450, 'tutorial', 'T'+ i+1 +'.png')
+			console.log(measure.key);
 			measure.inputEnabled = true;
 			measure.input.enableDrag();
 			measure.isFlipped = false;
