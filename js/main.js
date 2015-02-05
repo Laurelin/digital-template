@@ -11,7 +11,6 @@ window.onload = function() {
     // loading functions to reflect where you are putting the assets.
     // All loading functions will typically all be found inside "preload()".
     
-    "use strict";
     
     var game = new Phaser.Game( 1024, 640, Phaser.AUTO, 'game', { preload: preload, create: create, update: update } );
 	
@@ -101,7 +100,16 @@ window.onload = function() {
 		m5.input.enableDrag();
 		m6.input.enableDrag();
 		
-		
+		var measure;
+		for(var i = 0; i < 6; i++)
+		{
+			measure = game.add.sprite( 50 + 150*i, 450, 'tutorial', 'T'+ i+1 +'.png')
+			measure.inputEnabled = true;
+			measure.input.enableDrag();
+			measure.isFlipped = false;
+			measure.isInverted = false;
+			measure.events.onInputOver.add(manipulate, measure);
+		}
 
         // Add some text using a CSS style.
         // Center it in X, and position its top 15 pixels from the top of the world.
@@ -118,5 +126,21 @@ window.onload = function() {
 	{
 		playButton.isVisible =! playButton.isVisible;
 		sound.play('m1');
+	}
+	
+	function manipulate(){
+	
+		if(game.input.keyboard.isDown(Phaser.Keyboard.LEFT)|| game.input.keyboard.isDown(Phaser.Keyboard.RIGHT))
+		{
+			this.isFlipped = !this.isFlipped;
+			
+		}
+		
+		if(game.input.keyboard.isDown(Phaser.Keyboard.UP)|| game.input.keyboard.isDown(Phaser.Keyboard.DOWN))
+		{
+			this.isInverted = !this.isInverted;
+			
+		}
+	
 	}
 };
