@@ -29,10 +29,10 @@ BasicGame.Game.prototype = {
     create: function () {
 	
 		//background
-		game.add.sprite( 0, 0, 'tutorial', 'musicback.jpg');
+		this.add.sprite( 0, 0, 'tutorial', 'musicback.jpg');
 		
 		//audio sprite
-		var sound = game.add.audio('sound');
+		var sound = this.add.audio('sound');
 		sound.allowMultiple = true;
 		
 		//markers
@@ -66,21 +66,21 @@ BasicGame.Game.prototype = {
 		sound.addMarker('m4', 69, 2.3);
 		
 		//buttons!
-		var replayButton = game.add.button( 18, 20 , 'tutorial', test, this, 'playbutton2.png', 'playbutton2.png', 'playpressed.png', 'playbutton2.png');
-		var playButton = game.add.button( 890, 20 , 'tutorial', test, this, 'playbutton1.png', 'playbutton1.png', 'playpressed1.png', 'playbutton1.png');
-		var checkButton = game.add.button( game.world.centerX, 520 , 'tutorial', test, this, 'check.png', 'check.png', 'checkpressed.png', 'check.png');
-		var pianoButton = game.add.button( 890, 180 , 'tutorial', test, this, 'piano.png', 'piano.png', 'piano.png', 'piano.png');
-		var violinButton = game.add.button( 890, 300 , 'tutorial', test, this, 'violin.png', 'violin.png', 'violin.png', 'violin.png');
+		var replayButton = this.add.button( 18, 20 , 'tutorial', test, this, 'playbutton2.png', 'playbutton2.png', 'playpressed.png', 'playbutton2.png');
+		var playButton = this.add.button( 890, 20 , 'tutorial', test, this, 'playbutton1.png', 'playbutton1.png', 'playpressed1.png', 'playbutton1.png');
+		var checkButton = this.add.button( this.world.centerX, 520 , 'tutorial', test, this, 'check.png', 'check.png', 'checkpressed.png', 'check.png');
+		var pianoButton = this.add.button( 890, 180 , 'tutorial', test, this, 'piano.png', 'piano.png', 'piano.png', 'piano.png');
+		var violinButton = this.add.button( 890, 300 , 'tutorial', test, this, 'violin.png', 'violin.png', 'violin.png', 'violin.png');
 		
 		
 		replayButton.onInputUp.add('playbutton2.png', this);
 		//puzzle pieces
-		var m1 = game.add.sprite( 50, 450, 'tutorial', 'T1.png');
-		var m2 = game.add.sprite( 200, 450, 'tutorial', 'T2.png');
-		var m3 = game.add.sprite( 350, 450, 'tutorial', 'T3.png');
-		var m4 = game.add.sprite( 500, 450, 'tutorial', 'T4.png');
-		var m5 = game.add.sprite( 650, 450, 'tutorial', 'T5.png');
-		var m6 = game.add.sprite( 820, 450, 'tutorial', 'T6.png');
+		var m1 = this.add.sprite( 50, 450, 'tutorial', 'T1.png');
+		var m2 = this.add.sprite( 200, 450, 'tutorial', 'T2.png');
+		var m3 = this.add.sprite( 350, 450, 'tutorial', 'T3.png');
+		var m4 = this.add.sprite( 500, 450, 'tutorial', 'T4.png');
+		var m5 = this.add.sprite( 650, 450, 'tutorial', 'T5.png');
+		var m6 = this.add.sprite( 820, 450, 'tutorial', 'T6.png');
 		
 		//behaviors
 		m1.inputEnabled = true;
@@ -102,7 +102,7 @@ BasicGame.Game.prototype = {
         // Add some text using a CSS style.
         // Center it in X, and position its top 15 pixels from the top of the world.
         var style = { font: "25px Verdana", fill: "#9999ff", align: "center" };
-        var text = game.add.text( game.world.centerX, 15, "Music Puzzle", style );
+        var text = this.add.text( this.world.centerX, 15, "Music Puzzle", style );
         text.anchor.setTo( 0.5, 0.0 );
     }
     
