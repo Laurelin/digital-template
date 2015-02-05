@@ -24,7 +24,7 @@ BasicGame.main = function (game) {
 
 };
 
-BasicGame.main.prototype = {
+BasicGame.Game.prototype = {
 
     create: function () {
 	
