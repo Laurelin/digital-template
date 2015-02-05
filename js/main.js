@@ -46,8 +46,7 @@ window.onload = function() {
 		//all playbacks are default piano
 		piano = true;
 
-		//need a group for player's answer to puzzle.
-		song = this.add.group();
+		song = new Array(9);
 		
 		//background
 		game.add.sprite( 0, 0, 'tutorial', 'musicback.jpg');
@@ -130,7 +129,19 @@ window.onload = function() {
 		for(var i = 0; i < 6; i++)
 		{
 			measure = game.add.sprite( 50 + 150*i, 450, 'tutorial', 'T'+ (i+1).toString() +'.png')
-			console.log(measure.frame);
+			measure.inputEnabled = true;
+			measure.input.enableDrag();
+			measure.input.enableSnap(90, 90, false, true);
+			measure.events.onDragStop.add(fixLocation);
+			measure.isFlipped = false;
+			measure.isInverted = false;
+			measure.events.onInputDown.add(manipulate, measure);
+			
+		}
+		
+		for(var i = 0; i < 6; i++)
+		{
+			measure = game.add.sprite( 50 + 150*i, 450, 'tutorial', 'T'+ (i+1).toString() +'.png')
 			measure.inputEnabled = true;
 			measure.input.enableDrag();
 			measure.input.enableSnap(90, 90, false, true);
@@ -182,13 +193,9 @@ window.onload = function() {
 		{
 			measure.x = 390;
 		}
-		else if(measure.x > 540 && measure.x < 690)
+		else if(measure.x > 540)
 		{
 			measure.x = 540;
-		}
-		else if(measure.x > 690)
-		{
-			measure.x = 690;
 		}
 		
 		if(measure.y < 200){
@@ -201,9 +208,24 @@ window.onload = function() {
 			measure.y = 300;
 		}
 		else if (measure. y > 450) 
-			measure.y = 450;
+			measure.y = 450;		
+			
+		setPlayback(measure);
 	}
 	
+	function setPlayback(measure){
+	
+		var soundName;
+		var num;
+		if(piano){
+			num = measure.frame + 4;
+			if(!num%4){ //if num is divisible by four
+				soundName = 'T' + (num%4);
+			}
+			
+		}
+		
+	}
 	
 	function pPiano(){
 		piano = true;
