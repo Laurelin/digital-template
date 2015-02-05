@@ -18,7 +18,7 @@ window.onload = function() {
     function preload() {
         // Load an image and call it 'logo'.
         game.load.atlasJSONHash('tutorial', 'assets/tutorial.png', 'assets/tutorial.json');
-		game.load.audio('twinkle', 'assets/twinkle.wav');
+		game.load.audio('twinkle', 'assets/Twinkle.wav');
     }
     
 
