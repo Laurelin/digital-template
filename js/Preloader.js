@@ -23,8 +23,8 @@ BasicGame.Preloader.prototype = {
 
 		//	Here we load the rest of the assets our game needs.
 		//	As this is just a Project Template I've not provided these assets, swap them for your own.
-		this.load.atlasJSONHash('tutorial', 'assets/tutorial.png', 'assets/tutorial.json');
-		this.load.audio('sound', 'assets/Twinkle.wav');
+		game.load.atlasJSONHash('tutorial', 'assets/tutorial.png', 'assets/tutorial.json');
+		game.load.audio('sound', 'assets/Twinkle.wav');
 		
 	},
 
