@@ -14,6 +14,13 @@ window.onload = function() {
     "use strict";
     
     var game = new Phaser.Game( 1024, 640, Phaser.AUTO, 'game', { preload: preload, create: create, update: update } );
+	
+	var replayButton;
+	var playButton;
+	var checkButton;
+	var pianoButton;
+	var violinButton;
+	var sound;
     
     function preload() {
         // Load an image and call it 'logo'.
@@ -29,7 +36,7 @@ window.onload = function() {
 		game.add.sprite( 0, 0, 'tutorial', 'musicback.jpg');
 		
 		//audio sprite
-		var sound = game.add.audio('sound');
+		sound = game.add.audio('sound');
 		sound.allowMultiple = true;
 		
 		//markers
@@ -63,11 +70,11 @@ window.onload = function() {
 		sound.addMarker('m4', 69, 2.3);
 		
 		//buttons!
-		var replayButton = game.add.button( 18, 20 , 'tutorial', test, this, 'playbutton2.png', 'playbutton2.png', 'playpressed.png', 'playbutton2.png');
-		var playButton = game.add.button( 890, 20 , 'tutorial', test, this, 'playbutton1.png', 'playbutton1.png', 'playpressed1.png', 'playbutton1.png');
-		var checkButton = game.add.button( game.world.centerX, 520 , 'tutorial', test, this, 'check.png', 'check.png', 'checkpressed.png', 'check.png');
-		var pianoButton = game.add.button( 890, 180 , 'tutorial', test, this, 'piano.png', 'piano.png', 'piano.png', 'piano.png');
-		var violinButton = game.add.button( 890, 300 , 'tutorial', test, this, 'violin.png', 'violin.png', 'violin.png', 'violin.png');
+		replayButton = game.add.button( 18, 20 , 'tutorial', test, this, 'playbutton2.png', 'playbutton2.png', 'playpressed.png', 'playbutton2.png');
+		playButton = game.add.button( 890, 20 , 'tutorial', test, this, 'playbutton1.png', 'playbutton1.png', 'playpressed1.png', 'playbutton1.png');
+		checkButton = game.add.button( game.world.centerX, 520 , 'tutorial', test, this, 'check.png', 'check.png', 'checkpressed.png', 'check.png');
+		pianoButton = game.add.button( 890, 180 , 'tutorial', test, this, 'piano.png', 'piano.png', 'piano.png', 'piano.png');
+		violinButton = game.add.button( 890, 300 , 'tutorial', test, this, 'violin.png', 'violin.png', 'violin.png', 'violin.png');
 		
 		
 		replayButton.onInputUp.add('playbutton2.png', this);
@@ -110,5 +117,6 @@ window.onload = function() {
 	function test()
 	{
 		playButton.isVisible =! playButton.isVisible;
+		sound.play('m1');
 	}
 };
