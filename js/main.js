@@ -1,32 +1,29 @@
-BasicGame.main = function (game) {
+window.onload = function() {
+    // You might want to start with a template that uses GameStates:
+    //     https://github.com/photonstorm/phaser/tree/master/resources/Project%20Templates/Basic
+    
+    // You can copy-and-paste the code from any of the examples at http://examples.phaser.io here.
+    // You will need to change the fourth parameter to "new Phaser.Game()" from
+    // 'phaser-example' to 'game', which is the id of the HTML element where we
+    // want the game to go.
+    // The assets (and code) can be found at: https://github.com/photonstorm/phaser/tree/master/examples/assets
+    // You will need to change the paths you pass to "game.load.image()" or any other
+    // loading functions to reflect where you are putting the assets.
+    // All loading functions will typically all be found inside "preload()".
+    
+    "use strict";
+    
+    var game = new Phaser.Game( 1024, 640, Phaser.AUTO, 'game', { preload: preload, create: create, update: update } );
+    
+    function preload() {
+        // Load an image and call it 'logo'.
+        game.load.atlasJSONHash('tutorial', 'assets/tutorial.png', 'assets/tutorial.json');
+		game.load.audio('sound', 'assets/Twinkle.wav');
+    }
+    
 
-	 //  When a State is added to Phaser it automatically has the following properties set on it, even if they already exist:
-
-    this.game;      //  a reference to the currently running game (Phaser.Game)
-    this.add;       //  used to add sprites, text, groups, etc (Phaser.GameObjectFactory)
-    this.camera;    //  a reference to the game camera (Phaser.Camera)
-    this.cache;     //  the game cache (Phaser.Cache)
-    this.input;     //  the global input manager. You can access this.input.keyboard, this.input.mouse, as well from it. (Phaser.Input)
-    this.load;      //  for preloading assets (Phaser.Loader)
-    this.math;      //  lots of useful common math operations (Phaser.Math)
-    this.sound;     //  the sound manager - add a sound, play one, set-up markers, etc (Phaser.SoundManager)
-    this.stage;     //  the game stage (Phaser.Stage)
-    this.time;      //  the clock (Phaser.Time)
-    this.tweens;    //  the tween manager (Phaser.TweenManager)
-    this.state;     //  the state manager (Phaser.StateManager)
-    this.world;     //  the game world (Phaser.World)
-    this.particles; //  the particle manager (Phaser.Particles)
-    this.physics;   //  the physics manager (Phaser.Physics)
-    this.rnd;       //  the repeatable random number generator (Phaser.RandomDataGenerator)
-
-    //  You can use any of these from any function within this State.
-    //  But do consider them as being 'reserved words', i.e. don't create a property for your own game called "world" or you'll over-write the world reference.
-
-};
-
-BasicGame.Game.prototype = {
-
-    create: function () {
+    
+    function create() {
 	
 		//background
 		game.add.sprite( 0, 0, 'tutorial', 'musicback.jpg');
@@ -106,7 +103,7 @@ BasicGame.Game.prototype = {
         text.anchor.setTo( 0.5, 0.0 );
     }
     
-    update: function () {
+    function update() {
        
     }
 	
