@@ -18,6 +18,7 @@ window.onload = function() {
     function preload() {
         // Load an image and call it 'logo'.
         game.load.atlasJSONHash('tutorial', 'assets/tutorial.png', 'assets/tutorial.json');
+		game.load.audio('twinkle', 'assets/twinkle.wav');
     }
     
 
@@ -27,6 +28,40 @@ window.onload = function() {
 		//background
 		game.add.sprite( 0, 0, 'tutorial', 'musicback.jpg');
 		
+		//audio sprite
+		var sound = game.add.audio('twinkle');
+		twinkle.allowMultiple = true;
+		
+		//markers
+		
+		twinkle.addMarker('m1', 0, 2.3);
+		twinkle.addMarker('m1h', 3, 2.3);
+		twinkle.addMarker('m1hv', 6, 2.3);
+		twinkle.addMarker('m1v', 9, 2.3);
+		twinkle.addMarker('m1vi', 12, 2.3);
+		twinkle.addMarker('m1vih', 15, 2.3);
+		twinkle.addMarker('m1vihv', 18, 2.3);
+		twinkle.addMarker('m1viv', 21, 2.3);
+		
+		twinkle.addMarker('m2', 24, 2.3);
+		twinkle.addMarker('m2h', 27, 2.3);
+		twinkle.addMarker('m2hv', 30, 2.3);
+		twinkle.addMarker('m2v', 33, 2.3);
+		twinkle.addMarker('m2vi', 36, 2.3);
+		twinkle.addMarker('m2vih', 39, 2.3);
+		twinkle.addMarker('m2vihv', 42, 2.3);
+		twinkle.addMarker('m2viv', 45, 2.3);
+		
+		twinkle.addMarker('m3', 48, 2.3);
+		twinkle.addMarker('m3h', 51, 2.3);
+		twinkle.addMarker('m3hv', 54, 2.3);
+		twinkle.addMarker('m3v', 57, 2.3);
+		twinkle.addMarker('m3vih', 60, 2.3);
+		twinkle.addMarker('m3vihv', 63, 2.3);
+		twinkle.addMarker('m3viv', 66, 2.3);
+		
+		twinkle.addMarker('m4', 69, 2.3);
+		
 		//buttons!
 		var replayButton = game.add.button(18, 20 , 'tutorial', test, this, 'playbutton2.png', 'playbutton2.png', 'playpressed.png', 'playbutton2.png');
 		var playButton = game.add.button(890, 20 , 'tutorial', test, this, 'playbutton1.png', 'playbutton1.png', 'playpressed1.png', 'playbutton1.png');
@@ -34,6 +69,8 @@ window.onload = function() {
 		var pianoButton = game.add.button(890, 180 , 'tutorial', test, this, 'piano.png', 'piano.png', 'piano.png', 'piano.png');
 		var violinButton = game.add.button(890, 300 , 'tutorial', test, this, 'violin.png', 'violin.png', 'violin.png', 'violin.png');
 		
+		
+		replayButton.onInputUp.add('playbutton2.png', this);
 		//puzzle pieces
 		var m1 = game.add.sprite( 50, 450, 'tutorial', 'T1.png');
 		var m2 = game.add.sprite( 200, 450, 'tutorial', 'T2.png');
@@ -72,6 +109,6 @@ window.onload = function() {
 	
 	function test()
 	{
-		playbuttonvisible =!  playbutton.visible;
+		twinkle.play('m1vi');
 	}
 };
