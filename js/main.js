@@ -102,8 +102,6 @@ window.onload = function() {
 		violinButton = game.add.button( 890, 300 , 'tutorial', test, this, 'violin.png', 'violin.png', 'violin.png', 'violin.png');
 		
 		
-		replayButton.onInputUp.add('playbutton2.png', this);
-		
 		var measure;
 		for(var i = 0; i < 6; i++)
 		{
