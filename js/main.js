@@ -182,13 +182,9 @@ window.onload = function() {
 		{
 			measure.x = 390;
 		}
-		else if(measure.x > 540 && measure.x < 690)
+		else if(measure.x > 540)
 		{
 			measure.x = 540;
-		}
-		else if(measure.x > 690)
-		{
-			measure.x = 690;
 		}
 		
 		if(measure.y < 200){
@@ -202,8 +198,46 @@ window.onload = function() {
 		}
 		else if (measure. y > 450) 
 			measure.y = 450;
+		
+		playback(measure);	
+			
 	}
 	
+	function playback(measure){
+	
+		//if measure is in first line
+		if(measure.y === 200)
+		{
+			switch(measure.x){
+				case 90: //first measure of song
+					song.addAt(measure, 0);
+					break;
+				case 240: // second measure
+					song.add(measure, 1);
+					break;
+				case 390:
+					song.add(measure, 2);
+					break;
+				case 540:
+					song.add(measure, 3);
+			}
+				
+		}
+		else if( measure.y === 300){
+			switch(measure.x){
+				case 90: //fifth measure of song
+					song.addAt(measure, 4);
+					break;
+				case 240: // sixth measure
+					song.add(measure, 5);
+					break;
+				case 390:
+					song.add(measure, 6);
+					break;
+				case 540:
+					song.add(measure, 7);
+		}
+	}
 	
 	function pPiano(){
 		piano = true;
