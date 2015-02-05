@@ -106,7 +106,10 @@ BasicGame.Game.prototype = {
         text.anchor.setTo( 0.5, 0.0 );
     }
     
-    function update() {
+    update: function () {
+	
+	var i;
+	i++;
        
     }
 	
