@@ -18,7 +18,7 @@ window.onload = function() {
     function preload() {
         // Load an image and call it 'logo'.
         game.load.atlasJSONHash('tutorial', 'assets/tutorial.png', 'assets/tutorial.json');
-		game.load.audio('twinkle', 'assets/Twinkle.wav');
+		game.load.audio('sound', 'assets/Twinkle.wav');
     }
     
 
@@ -29,38 +29,38 @@ window.onload = function() {
 		game.add.sprite( 0, 0, 'tutorial', 'musicback.jpg');
 		
 		//audio sprite
-		var sound = game.add.audio('twinkle');
-		twinkle.allowMultiple = true;
+		var sound = game.add.audio('sound');
+		sound.allowMultiple = true;
 		
 		//markers
 		
-		twinkle.addMarker('m1', 0, 2.3);
-		twinkle.addMarker('m1h', 3, 2.3);
-		twinkle.addMarker('m1hv', 6, 2.3);
-		twinkle.addMarker('m1v', 9, 2.3);
-		twinkle.addMarker('m1vi', 12, 2.3);
-		twinkle.addMarker('m1vih', 15, 2.3);
-		twinkle.addMarker('m1vihv', 18, 2.3);
-		twinkle.addMarker('m1viv', 21, 2.3);
+		sound.addMarker('m1', 0, 2.3);
+		sound.addMarker('m1h', 3, 2.3);
+		sound.addMarker('m1hv', 6, 2.3);
+		sound.addMarker('m1v', 9, 2.3);
+		sound.addMarker('m1vi', 12, 2.3);
+		sound.addMarker('m1vih', 15, 2.3);
+		sound.addMarker('m1vihv', 18, 2.3);
+		sound.addMarker('m1viv', 21, 2.3);
 		
-		twinkle.addMarker('m2', 24, 2.3);
-		twinkle.addMarker('m2h', 27, 2.3);
-		twinkle.addMarker('m2hv', 30, 2.3);
-		twinkle.addMarker('m2v', 33, 2.3);
-		twinkle.addMarker('m2vi', 36, 2.3);
-		twinkle.addMarker('m2vih', 39, 2.3);
-		twinkle.addMarker('m2vihv', 42, 2.3);
-		twinkle.addMarker('m2viv', 45, 2.3);
+		sound.addMarker('m2', 24, 2.3);
+		sound.addMarker('m2h', 27, 2.3);
+		sound.addMarker('m2hv', 30, 2.3);
+		sound.addMarker('m2v', 33, 2.3);
+		sound.addMarker('m2vi', 36, 2.3);
+		sound.addMarker('m2vih', 39, 2.3);
+		sound.addMarker('m2vihv', 42, 2.3);
+		sound.addMarker('m2viv', 45, 2.3);
 		
-		twinkle.addMarker('m3', 48, 2.3);
-		twinkle.addMarker('m3h', 51, 2.3);
-		twinkle.addMarker('m3hv', 54, 2.3);
-		twinkle.addMarker('m3v', 57, 2.3);
-		twinkle.addMarker('m3vih', 60, 2.3);
-		twinkle.addMarker('m3vihv', 63, 2.3);
-		twinkle.addMarker('m3viv', 66, 2.3);
+		sound.addMarker('m3', 48, 2.3);
+		sound.addMarker('m3h', 51, 2.3);
+		sound.addMarker('m3hv', 54, 2.3);
+		sound.addMarker('m3v', 57, 2.3);
+		sound.addMarker('m3vih', 60, 2.3);
+		sound.addMarker('m3vihv', 63, 2.3);
+		sound.addMarker('m3viv', 66, 2.3);
 		
-		twinkle.addMarker('m4', 69, 2.3);
+		sound.addMarker('m4', 69, 2.3);
 		
 		//buttons!
 		var replayButton = game.add.button(18, 20 , 'tutorial', test, this, 'playbutton2.png', 'playbutton2.png', 'playpressed.png', 'playbutton2.png');
@@ -109,6 +109,6 @@ window.onload = function() {
 	
 	function test()
 	{
-		twinkle.play('m1vi');
+		sound.play('m1vi');
 	}
 };
