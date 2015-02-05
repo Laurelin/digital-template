@@ -23,9 +23,12 @@ BasicGame.Preloader.prototype = {
 
 		//	Here we load the rest of the assets our game needs.
 		//	As this is just a Project Template I've not provided these assets, swap them for your own.
-		game.load.atlasJSONHash('tutorial', 'assets/tutorial.png', 'assets/tutorial.json');
-		game.load.audio('sound', 'assets/Twinkle.wav');
-		
+		this.load.image('titlepage', 'images/title.jpg');
+		this.load.atlas('playButton', 'images/play_button.png', 'images/play_button.json');
+		this.load.audio('titleMusic', ['audio/main_menu.mp3']);
+		this.load.bitmapFont('caslon', 'fonts/caslon.png', 'fonts/caslon.xml');
+		//	+ lots of other required assets here
+
 	},
 
 	create: function () {
@@ -46,10 +49,10 @@ BasicGame.Preloader.prototype = {
 		//	If you don't have any music in your game then put the game.state.start line into the create function and delete
 		//	the update function completely.
 		
-		if (this.cache.isSoundDecoded('sound') && this.ready == false)
+		if (this.cache.isSoundDecoded('titleMusic') && this.ready == false)
 		{
 			this.ready = true;
-			this.state.start('main');
+			this.state.start('MainMenu');
 		}
 
 	}
