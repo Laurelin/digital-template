@@ -104,17 +104,16 @@ BasicGame.main.prototype = {
         var style = { font: "25px Verdana", fill: "#9999ff", align: "center" };
         var text = this.add.text( this.world.centerX, 15, "Music Puzzle", style );
         text.anchor.setTo( 0.5, 0.0 );
-    }
+    },
     
     update: function () {
 	
 	var i;
 	i++;
        
-    }
+    },
 	
-	function test()
-	{
+	function test(){
 		playButton.isVisible =! playButton.isVisible;
 	}
 };
