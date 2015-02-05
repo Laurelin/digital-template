@@ -133,20 +133,18 @@ window.onload = function() {
 			console.log(measure.frame);
 			measure.inputEnabled = true;
 			measure.input.enableDrag();
+			measure.input.enableSnap(90, 90, false, true);
+			measure.events.onDragStop.add(fixLocation);
 			measure.isFlipped = false;
 			measure.isInverted = false;
 			measure.events.onInputDown.add(manipulate, measure);
+			
 		}
 		
-		//debugger
-		
-		var sprite = this.add.sprite(50, 300, 'tutorial')
-		sprite.frame = 1;
-
         // Add some text using a CSS style.
         // Center it in X, and position its top 15 pixels from the top of the world.
         var style = { font: "25px Verdana", fill: "#9999ff", align: "center" };
-        var text = game.add.text( game.world.centerX, 15, "Music Puzzle", style );
+        var text = game.add.text( game.world.centerX, 15, "Twinkle Twinkle Little Star", style );
         text.anchor.setTo( 0.5, 0.0 );
 		
 		//keys to manipulate measure pieces with
@@ -160,16 +158,52 @@ window.onload = function() {
 		horizontal.onDown.add(invert, this);
 		horizontal1.onDown.add(invert, this);
     }
+	
+	function render(){
+	
+		game.debug.text('Drag measures here:', 100, 300);
+	}
     
     function update() {
-	
-	//frame order - 0 = normal
-	//1 = h.png
-	//2 = hv.png
-	//3 = v.png
+
 	
 	   
     }
+	
+	function fixLocation(measure){
+	
+		if(measure.x < 90){
+			measure.x = 90;
+		}
+		else if(measure.x > 240 && measure.x < 390){
+			measure.x = 240;
+			}
+		else if(measure.x > 390 && measure.x < 540)
+		{
+			measure.x = 390;
+		}
+		else if(measure.x > 540 && measure.x < 690)
+		{
+			measure.x = 540;
+		}
+		else if(measure.x > 690)
+		{
+			measure.x = 690;
+		}
+		
+		if(measure.y < 200){
+			measure.y = 200;
+		}
+		else if(measure.y > 200 && measure.y < 300){
+			measure.y = 300;
+		}
+		else if (measure.y > 300 && measure.y < 450){
+			measure.y = 300;
+		}
+		else if (measure. y > 450) 
+			measure.y = 450;
+	}
+	
 	
 	function pPiano(){
 		piano = true;
