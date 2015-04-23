@@ -39,6 +39,7 @@ BasicGame.Game = function (game) {
 	var vertical1;
 	var horizontal;
 	var horizontal1;
+	var playList[];
 
 BasicGame.Game.prototype = {
     
@@ -163,7 +164,7 @@ BasicGame.Game.prototype = {
         var text = this.add.text( this.world.centerX, 15, "Twinkle Twinkle Little Star", style );
         text.anchor.setTo( 0.5, 0.0 );
 		
-		
+		//draw helper boxes
 		for(var i = 0; i < 8; i++)
 		{	
 			if(i < 4)
@@ -198,6 +199,7 @@ BasicGame.Game.prototype = {
 		playButton.isVisible =! playButton.isVisible;
 	}
 	
+	//snaps measures to specific locations.
 	function fixLocation(measure){
 	
 		if(measure.x < 190){
@@ -223,34 +225,52 @@ BasicGame.Game.prototype = {
 		}
 		else if (measure.y > 300 && measure.y < 450){
 			measure.y = 300;
-		}
-		else if (measure. y > 450) 
-			measure.y = 450;		
+		}		
 			
 		setPlayback(measure);
+		setIndex(measure);
+		updatePlayList(measure);
+	}
+	
+	//playlist is array of sound markers
+	function updatePlayList(measure){
+		
+		playList[measure.index] = measure.soundName;
+		
+	}
+	
+	
+	function setIndex(measure)
+	{
+		measure.index = (measure.x - 190) / 150;
+		
+		if(measure.y == 300)
+			measure.index += 3;
 	}
 	
 	function setPlayback(measure){
 	
-		var soundName;
 		var num;
 		if(piano){
 			num = measure.frame + 4;
 			if(!num%4){ //if num is divisible by four
-				soundName = 'T' + (num%4);
+				measure.soundName = 'T' + (num%4);
 			}
 			
 		}
 		
 	}
 	
+	//playback is piano?
 	function pPiano(){
 		piano = true;
 		}
 		
+	//playback is violin?	
 	function pViolin(){
 		piano = false;
 		}
+		
 		
 	function playAgain(){
 	
@@ -281,9 +301,9 @@ BasicGame.Game.prototype = {
 	
 			cur = this;
 		}
+	
+	
 	function flip(){
-	
-	
 		cur.isFlipped = !cur.isFlipped;
 		
 			if(cur.isFlipped){
