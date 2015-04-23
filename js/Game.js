@@ -39,7 +39,7 @@ BasicGame.Game = function (game) {
 	var vertical1;
 	var horizontal;
 	var horizontal1;
-	var playList[];
+	var playList = [];
 
 BasicGame.Game.prototype = {
     
@@ -191,12 +191,18 @@ BasicGame.Game.prototype = {
 	
     update: function () {
 	
-	},
+	}
 	
 };
 
 	function test(){
-		playButton.isVisible =! playButton.isVisible;
+		for(var i = 0; i < playList.length; i++)
+		{
+			sound.play(playList[i]);
+			//empty loop so that the program waits for one marker to complete before moving to the next.
+			while(sound.isPlaying){
+			}
+		}
 	}
 	
 	//snaps measures to specific locations.
@@ -271,7 +277,7 @@ BasicGame.Game.prototype = {
 		piano = false;
 		}
 		
-		
+	//play the problem
 	function playAgain(){
 	
 		sound.stop();
@@ -286,16 +292,10 @@ BasicGame.Game.prototype = {
 	
 	}
 	
+	//check if correct
 	function check(){
 		twinkle.play();
 		}
-	
-	function test()
-	{
-	
-		sound.stop();
-		sound.play('T1');
-	}
 	
 	function manipulate(){
 	
