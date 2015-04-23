@@ -163,6 +163,19 @@ BasicGame.Game.prototype = {
         var text = this.add.text( this.world.centerX, 15, "Twinkle Twinkle Little Star", style );
         text.anchor.setTo( 0.5, 0.0 );
 		
+		
+		for(var i = 0; i < 8; i++)
+		{	
+			if(i < 4)
+				var graphics = this.add.graphics(190 + i*150, 200);
+			else
+				var graphics = this.add.graphics(190 + (i - 4)*150, 300);
+			
+			graphics.lineStyle(2, 0xffd900, 1);
+			graphics.drawRect(0, 0, 150, 60);
+		}
+		
+		
 		//keys to manipulate measure pieces with
 		vertical = this.input.keyboard.addKey(Phaser.Keyboard.W);
 		vertical1 = this.input.keyboard.addKey(Phaser.Keyboard.S);
@@ -179,10 +192,6 @@ BasicGame.Game.prototype = {
 	
 	},
 	
-	render: function(){
-	
-		this.debug.text('Drag measures here:', 100, 300);
-	}
 };
 
 	function test(){
@@ -191,19 +200,19 @@ BasicGame.Game.prototype = {
 	
 	function fixLocation(measure){
 	
-		if(measure.x < 90){
-			measure.x = 90;
+		if(measure.x < 190){
+			measure.x = 190;
 		}
-		else if(measure.x > 240 && measure.x < 390){
-			measure.x = 240;
+		else if(measure.x > 340 && measure.x < 490){
+			measure.x = 340;
 			}
-		else if(measure.x > 390 && measure.x < 540)
+		else if(measure.x > 490 && measure.x < 640)
 		{
-			measure.x = 390;
+			measure.x = 490;
 		}
-		else if(measure.x > 540)
+		else if(measure.x > 640)
 		{
-			measure.x = 540;
+			measure.x = 640;
 		}
 		
 		if(measure.y < 200){
