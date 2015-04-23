@@ -12,7 +12,7 @@ BasicGame.Boot.prototype = {
         this.input.maxPointers = 1;
 
         //  Phaser will automatically pause if the browser tab the game is in loses focus. You can disable that here:
-        this.stage.disableVisibilityChange = false;
+        this.stage.disableVisibilityChange = true;
 
         if (this.game.device.desktop)
         {
@@ -43,7 +43,7 @@ BasicGame.Boot.prototype = {
 
         //  By this point the preloader assets have loaded to the cache, we've set the game settings
         //  So now let's start the real preloader going
-        this.state.start('preloader');
+        this.state.start('Preloader');
 
     }
 
